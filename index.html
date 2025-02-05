@@ -32,23 +32,22 @@
 <body class="bg-pedram-h0 mx-5 md:mx-30 lg:mx-40 2xl:mx-50 flex flex-col">
     <nav class="flex flex-row justify-between items-center my-10">
         <div class="w-10 md:w-20">
-            <img src="images/pd.svg">
+            <a href="https://pedramcode.github.io/"><img src="images/pd.svg"></a>
         </div>
         <div class="flex flex-row gap-3 md:gap-10 items-center">
-            <div class="text-pedram-h3 text-xl md:text-2xl cursor-pointer">About</div>
-            <div class="text-pedram-h3 text-xl md:text-2xl cursor-pointer">Résumé</div>
-            <div class="text-pedram-h3 text-xl md:text-2xl cursor-pointer">Projects</div>
-            <div class="text-pedram-h3 text-xl md:text-2xl cursor-pointer">Contact</div>
+            <a href="#about" class="text-pedram-h3 text-xl md:text-2xl cursor-pointer">About</a>
+            <a href="#resume" class="text-pedram-h3 text-xl md:text-2xl cursor-pointer">Résumé</a>
+            <a href="#contact" class="text-pedram-h3 text-xl md:text-2xl cursor-pointer">Contact</a>
         </div>
     </nav>
     <div class="flex flex-col">
-        <header class="flex flex-col lg:flex-row justify-between items-center md:items-start my-5 md:my-15 gap-10">
+        <header class="flex flex-col lg:flex-row justify-between items-center md:items-start my-10 md:my-30 gap-10">
             <div class="flex flex-col items-center md:items-start text-pedram-h3">
                 <div class="text-5xl md:text-6xl lg:text-7xl 2xl:text-9xl">Pedram</div>
                 <div class="text-5xl md:text-6xl lg:text-7xl 2xl:text-9xl">Dehghanpour</div>
                 <div class="text-2xl mt-5 md:mt-7 lg:mt-10 md:text-2xl lg:text-3xl 2xl:text-5xl">Chief technology officer</div>
             </div>
-            <div class="flex flex-col gap-5 text-justify mx-5 md:mx-10 2xl:mx-25 text-pedram-h2 text-md/5 md:text-xl/9">
+            <div id="about" class="flex flex-col gap-5 text-justify mx-5 md:mx-10 2xl:mx-25 text-pedram-h2 text-md/5 md:text-xl/9">
                 <p>
                     Pedram is a seasoned software engineering professional with <span class="text-pedram-h3">over a decade </span>of international experience in leadership, innovation, and technical expertise. Throughout his career, he has held pivotal roles such as <span class="text-pedram-h3"> Team Leader, Chief Information Officer (CIO), Chief Technology Officer (CTO), System Designer, Infrastructure Designer, and Back-End Developer</span>, consistently delivering exceptional results across diverse industries.
                 </p>
@@ -57,7 +56,7 @@
                 </p>
             </div>
         </header>
-        <div class="my-10 md:my-30 flex flex-col gap-10 md:gap-30">
+        <div class="my-0 flex flex-col gap-10 md:gap-30" id="resume">
             <div class="flex flex-col lg:flex-row gap-5 lg:gap-10">
                 <div class="flex-1 flex flex-col items-start lg:items-end text-right">
                     <div class="text-2xl text-pedram-h3">Entekhab Group</div>
@@ -173,12 +172,23 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-col md:flex-row gap-5 md:gap-0 items-center justify-evenly my-10 lg:my-30">
+        <div id="contact" class="flex flex-col md:flex-row gap-5 md:gap-0 items-center justify-evenly my-10 lg:my-30">
             <a href="https://www.linkedin.com/in/dev-dehghanpour/" target="_blank" class="border-1 rounded-full p-4 border-pedram-h3"><img class="w-6" src="images/linkedin.svg" alt="linkedin"></a>
             <a href="mailto://dev.dehghanpour@gmail.com" target="_blank" class="border-1 rounded-full p-4 border-pedram-h3"><img class="w-6" src="images/email.svg" alt="email"></a>
             <a href="https://telegram.me/pedramcode98" target="_blank" class="border-1 rounded-full p-4 border-pedram-h3"><img class="w-6" src="images/telegram.svg" alt="telegram"></a>
             <a href="https://instagram.com/pedramsaann" target="_blank" class="border-1 rounded-full p-4 border-pedram-h3"><img class="w-6" src="images/insta.svg" alt="telegram"></a>
         </div>
     </div>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
