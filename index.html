@@ -26,17 +26,9 @@
             --color-pedram-black: #101010;
             --color-pedram-white: #FEFEFE;
         }
-        .d {
-            --color-pedram-h0: #222831;
-            --color-pedram-h1: #31363F;
-            --color-pedram-h2: #76ABAE;
-            --color-pedram-h3: #EEEEEE;
-            --color-pedram-black: #101010;
-            --color-pedram-white: #FEFEFE;
-        }
     </style>
 </head>
-<body class="bg-pedram-h0 mx-5 md:mx-30 lg:mx-40 2xl:mx-50 flex flex-col">
+<body class="bg-pedram-h0 mx-5 md:mx-30 lg:mx-40 2xl:mx-50 flex flex-col" id="top">
     <nav class="flex flex-row justify-between items-center my-10">
         <div class="w-10 md:w-20">
             <a href="https://pedramcode.github.io/"><img src="images/pd.svg"></a>
@@ -187,6 +179,9 @@
             <a href="https://instagram.com/pedramsaann" target="_blank" class="border-1 rounded-full p-4 border-pedram-h3"><img class="w-6" src="images/insta.svg" alt="telegram"></a>
         </div>
     </div>
+    <a id="jumpButton" href="#top" class="fixed opacity-0 duration-300 cursor-pointer bottom-10 p-2 right-10 border-0 rounded-full w-12 h-12 bg-pedram-h3 text-pedram-h0">
+        <img src="images/top.svg">
+    </a>
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -196,6 +191,17 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        window.addEventListener('scroll', function() {
+            const jumpButton = document.getElementById('jumpButton');
+            if (window.scrollY <= 100) {
+                // If at the top of the page, hide the button
+                jumpButton.style.opacity = 0;
+            } else {
+                // If scrolled down, show the button
+                jumpButton.style.opacity = 1;
+            }
         });
     </script>
 </body>
